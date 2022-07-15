@@ -1,5 +1,5 @@
 import "./mylabel.css";
-import { CustomFontColor } from '../stories/components/MyLabel.stories';
+import { CustomBackgroundColor } from '../stories/components/MyLabel.stories';
 
 export interface MyLabelProps {
   /**
@@ -25,6 +25,11 @@ export interface MyLabelProps {
 
    FontColor?: string;
 
+   /**
+   *  background color
+   */
+
+   backgroundColor?: string;
 }
 
 export const MyLabel = ({
@@ -32,10 +37,11 @@ export const MyLabel = ({
   size = "h2",
   allCaps,
   color,
-  FontColor="#5517ac"
+  FontColor="#5517ac",
+  backgroundColor= 'transparent'
 }: MyLabelProps) => {
   return (
-    <span className={`${size} text-${color}`} style={{color: FontColor}}>
+    <span className={`${size} text-${color}`} style={{color: FontColor, backgroundColor}}>
       {!allCaps ? label : label.toUpperCase()}
     </span>
   );
